@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash Chaurasiya Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- CINEMATIC LETTERBOX -->
+    <div id="lb-top"></div>
+    <div id="lb-bottom"></div>
+
+    <!-- BIG BANG INTRO OVERLAY -->
+    <div id="bb-overlay">
+        <canvas id="bb-canvas"></canvas>
+        <div id="bb-flash"></div>
+        <div id="bb-title">
+            <div class="big">Welcome to my PORTFOLIO</div>
+            <div class="sub">Data Science · AI/ML · Analytics</div>
+        </div>
+    </div>
+
+    <!-- VIGNETTE -->
+    <div id="vignette"></div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main-content">
+
+        <!-- BG -->
+        <canvas id="starfield"></canvas>
+        <div class="planet p1"></div>
+        <div class="planet p2"></div>
+        <div class="planet p3"></div>
+        <div class="planet p4"></div>
+        <div class="orb o1"></div>
+        <div class="orb o2"></div>
+        <div class="orb o3"></div>
+        <div class="ship">
+            <div class="trail"></div>
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 2 C40 16 46 30 46 42 C46 50 40 56 32 60 C24 56 18 50 18 42 C18 30 24 16 32 2 Z"
+                    fill="#cdd6e4" />
+                <path d="M32 2 C40 16 46 30 46 42 C46 46 44 50 41 53 L32 30 Z" fill="#8b97ab" />
+                <circle cx="32" cy="24" r="6" fill="#5eead4" />
+                <path d="M18 42 C10 44 6 52 6 58 C12 56 18 52 22 46 Z" fill="#5eead4" />
+                <path d="M46 42 C54 44 58 52 58 58 C52 56 46 52 42 46 Z" fill="#5eead4" />
+                <path d="M27 58 C27 64 37 64 37 58 C34 60 30 60 27 58 Z" fill="#fbbf24" />
+            </svg>
+        </div>
+        <div class="ship2">
+            <div class="trail"></div>
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 2 C40 16 46 30 46 42 C46 50 40 56 32 60 C24 56 18 50 18 42 C18 30 24 16 32 2 Z"
+                    fill="#c084fc" />
+                <circle cx="32" cy="24" r="5" fill="#e9d5ff" />
+                <path d="M18 42 C10 44 6 52 6 58 C12 56 18 52 22 46 Z" fill="#a855f7" />
+                <path d="M46 42 C54 44 58 52 58 58 C52 56 46 52 42 46 Z" fill="#a855f7" />
+                <path d="M27 58 C27 64 37 64 37 58 C34 60 30 60 27 58 Z" fill="#fbbf24" />
+            </svg>
+        </div>
+        <div class="rail L">
+            <div class="beam" style="left:30%;animation-duration:6s;animation-delay:0s;"></div>
+            <div class="beam" style="left:62%;animation-duration:8.5s;animation-delay:-3s;"></div>
+            <div class="beam" style="left:82%;animation-duration:5s;animation-delay:-1.5s;"></div>
+        </div>
+        <div class="rail R">
+            <div class="beam" style="left:24%;animation-duration:7s;animation-delay:-2s;"></div>
+            <div class="beam" style="left:56%;animation-duration:5.5s;animation-delay:-4s;"></div>
+            <div class="beam" style="left:78%;animation-duration:9.5s;animation-delay:0s;"></div>
+        </div>
+
+        <!-- SVG SCROLL PATH -->
+        <div id="scroll-path-wrap">
+            <svg id="scroll-path-svg" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="pathGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#5eead4" />
+                        <stop offset="50%" stop-color="#38bdf8" />
+                        <stop offset="100%" stop-color="#c084fc" />
+                    </linearGradient>
+                </defs>
+                <path id="path-track" d="" />
+                <path id="path-progress" d="" />
+            </svg>
+        </div>
+        <div class="path-pointer" id="path-dot">
+            <div class="pring"></div>
+            <div class="pring"></div>
+            <div class="pring"></div>
+            <div class="ph"></div>
+            <div class="pv"></div>
+        </div>
+
+        <!-- NAV -->
+        <header>
+            <nav>
+                <div class="logo">akash<span>.</span>dev</div>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- HERO -->
+        <section class="hero wrap">
+            <div>
+                <div class="hero-tag">Data Science · Machine Learning · Analytics</div>
+                <h1>Hi, I'm <span class="glitch name" data-text="Akash Chaurasiya">Akash Chaurasiya</span> —<br>
+                    I turn raw data into <span class="grad">decisions worth acting on.</span></h1>
+                <p class="lead">MCA student and aspiring Data Scientist with hands-on experience in Python, SQL, Power
+                    BI and full-stack development. I build dashboards, models and tools that make data easy to
+                    understand and act on.</p>
+                <div class="cta-row">
+                    <a href="#projects" class="btn btn-p">View Projects</a>
+                    <a href="#contact" class="btn btn-g">Get in Touch</a>
+                    <a href="RESUME.pdf" class="btn btn-g" target="_blank">Download Resume</a>
+                </div>
+            </div>
+            <div class="terminal">
+                <div class="tbar">
+                    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                    <span class="ttitle">profile.py</span>
+                </div>
+
+                <div class="tbody">
+                    <div><span class="c3">class</span> <span class="c1">DataScientist</span>:</div>
+                    <div>&nbsp;&nbsp;<span class="c3">def</span> <span class="c1">__init__</span>(self):</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;self.name = <span class="c2">"Akash Chaurasiya"</span></div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;self.role = <span class="c2">"Aspiring Data Scientist"</span></div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;self.education = <span class="c2">"MCA, JSSATE Noida"</span></div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;self.tools = [<span class="c2">"Python"</span>, <span
+                            class="c2">"SQL"</span>, <span class="c2">"Power BI"</span>, <span
+                            class="c2">"React"</span>,<span class="c2">"New technologies"</span>]</div>
+                    <br>
+                    <div>&nbsp;&nbsp;<span class="c3">def</span> <span class="c1">done</span>(self):</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c3">return</span> <span class="c2">"Web Dev Intern @
+                            Prodigy Infotech"</span></div>
+                    <br>
+
+                    <div class="typing-container">
+                        <span class="out">&gt;&gt;&gt;&nbsp;</span><span id="type-line1" class="out"></span><span
+                            id="cursor1" class="cursor"></span>
+                    </div>
+
+                    <div class="typing-container" id="output-wrapper" style="display: none; margin-top: 4px;">
+                        <span id="type-line2" class="c2"></span><span id="cursor2" class="cursor"
+                            style="display: none;"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="wrap">
+            <div class="sh rv">
+                <div class="eyebrow">About</div>
+                <h2 class="stitle">A bit about my journey</h2>
+            </div>
+            <p class="about-text rv">I'm currently pursuing my <strong>Master of Computer Applications (MCA)</strong> at
+                JSSATE, Noida, after completing my <strong>BCA from GGSIPU, New Delhi</strong>. My interests sit at the
+                intersection of <strong>data analytics, machine learning, and web development</strong> — I enjoy taking
+                messy, real-world data and turning it into dashboards, models, and applications that people can actually
+                use. Alongside my data work, I'm gaining practical front-end development experience as a <strong>Web
+                    Developer Intern at Prodigy Infotech</strong>, building responsive React applications.</p>
+            <div class="about-grid g3">
+                <div class="rv stat">
+                    <div class="num">3+</div>
+                    <div class="num-label">Data &amp; AI projects built end-to-end</div>
+                </div>
+                <div class="rv stat">
+                    <div class="num">6</div>
+                    <div class="num-label">Professional certifications completed</div>
+                </div>
+                <div class="rv stat">
+                    <div class="num">2</div>
+                    <div class="num-label">Degrees in Computer Applications (BCA &amp; MCA)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="wrap">
+            <div class="sh rv">
+                <div class="eyebrow">Experience</div>
+                <h2 class="stitle">Where I've worked</h2>
+            </div>
+            <div class="timeline">
+                <div class="rv tl-item">
+                    <div class="tl-role">Web Developer Intern — Prodigy Infotech</div>
+                    <div class="tl-meta">JUNE 2024 · 1 MONTH</div>
+                    <ul>
+                        <li>Developed and optimized responsive React.js applications using Bootstrap and RESTful APIs,
+                            enhancing front-end functionality and user engagement.</li>
+                        <li>Collaborated on feature development, debugging, and code optimization to maintain a clean,
+                            efficient codebase while ensuring timely project completion.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="wrap">
+            <div class="sh rv">
+                <div class="eyebrow">Projects</div>
+                <h2 class="stitle">Things I've built</h2>
+            </div>
+            <div class="pgrid g3">
+                <div class="rv card">
+                    <div class="card-head">
+                        <h3>Uber Ride Dashboard</h3><a
+                            href="https://github.com/Akash240620/Uber_Data_Analysis_Dashboard" class="card-link"
+                            target="_blank">GitHub
+                            →</a>
+                    </div>
+                    <div class="stack">Python · Pandas · SQL · Power BI · DAX · Excel</div>
+                    <ul>
+                        <li>Built a data analytics dashboard to analyse Uber ride data, leveraging Python, Pandas, SQL,
+                            and Power BI for processing and visualization.</li>
+                        <li>Conducted exploratory data analysis on trip, location, and time-based datasets to identify
+                            demand hotspots, peak usage periods, and revenue trends.</li>
+                        <li>Created interactive dashboards with KPIs, trend analysis, and geospatial insights to help
+                            stakeholders optimize resource allocation.</li>
+                    </ul>
+                </div>
+                <div class="rv card">
+                    <div class="card-head">
+                        <h3>Mobile Sales Dashboard</h3><a
+                            href="https://github.com/Akash240620/Mobile-Sales-Dashboard-using-POWER-BI"
+                            class="card-link" target="_blank">GitHub →</a>
+                    </div>
+                    <div class="stack">Power BI · DAX · Power Query · Excel</div>
+                    <ul>
+                        <li>Developed an interactive Mobile Sales Dashboard in Power BI to analyse sales performance,
+                            revenue trends, and customer insights.</li>
+                        <li>Used Power Query and DAX for data transformation, modelling, and KPI calculations for
+                            efficient business reporting.</li>
+                        <li>Created dynamic visualizations and filters to track key metrics and support data-driven
+                            decisions.</li>
+                    </ul>
+                </div>
+                <div class="rv card">
+                    <div class="card-head">
+                        <h3>AI Chatbot using Python</h3><a href="https://github.com/Akash240620/AI-Chatbot"
+                            class="card-link" target="_blank">GitHub →</a>
+                    </div>
+                    <div class="stack">Python · NLP · Groq API · Custom Tkinter</div>
+                    <ul>
+                        <li>Built an AI chatbot with speech recognition and text-to-speech for seamless voice-based
+                            interaction using NLP and LLMs.</li>
+                        <li>Integrated LLM APIs and real-time response generation for intelligent conversational
+                            assistance.</li>
+                        <li>Designed a user-friendly GUI and optimized response handling for a smoother user experience.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="wrap">
+            <div class="sh rv">
+                <div class="eyebrow">Skills</div>
+                <h2 class="stitle">Tools &amp; technologies</h2>
+            </div>
+            <div class="sgrid g4">
+                <div class="rv sg">
+                    <h4>Data Analysis &amp; Visualization</h4>
+                    <div class="tag-row"><span class="tag">Power BI</span><span class="tag">DAX</span><span
+                            class="tag">Excel</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span
+                            class="tag">Seaborn</span><span class="tag">Matplotlib</span></div>
+                </div>
+                <div class="rv sg">
+                    <h4>Programming &amp; Databases</h4>
+                    <div class="tag-row"><span class="tag">Python</span><span class="tag">SQL</span><span
+                            class="tag">C++</span><span class="tag">Java</span><span class="tag">DSA</span><span
+                            class="tag">VS Code</span></div>
+                </div>
+                <div class="rv sg">
+                    <h4>Data Engineering &amp; Modelling</h4>
+                    <div class="tag-row"><span class="tag">Data Cleaning</span><span class="tag">EDA</span><span
+                            class="tag">Machine Learning</span><span class="tag">Feature Engineering</span><span
+                            class="tag">Data Modelling</span><span class="tag">ETL</span><span class="tag">NLP</span>
+                    </div>
+                </div>
+                <div class="rv sg">
+                    <h4>Web Development</h4>
+                    <div class="tag-row"><span class="tag">HTML</span><span class="tag">CSS</span><span
+                            class="tag">JavaScript</span><span class="tag">React JS</span><span
+                            class="tag">Tailwind</span><span class="tag">MongoDB</span><span class="tag">REST
+                            APIs</span><span class="tag">UI/UX</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education" class="wrap">
+            <div class="sh rv">
+                <div class="eyebrow">Education &amp; Certifications</div>
+                <h2 class="stitle">Academic background &amp; credentials</h2>
+            </div>
+            <div class="section-title">
+                <h4>Education</h4><br>
+            </div>
+            <div class="egrid g2">
+                <div class="rv ecard">
+                    <div class="deg">Master of Computer Applications (MCA)</div>
+                    <div class="sch">JSS Academy of Technical Education, Noida</div>
+                    <div class="yr">Pursuing | 2025 - 27</div>
+                </div>
+                <div class="rv ecard">
+                    <div class="deg">Bachelor of Computer Applications (BCA)</div>
+                    <div class="sch">Guru Gobind Singh Indraprastha University, New Delhi</div>
+                    <div class="yr">Completed | 8.3 CGPA</div>
+                </div>
+                <div class="rv ecard">
+                    <div class="deg">Class 12<sup>th</sup> SCIENCE (PCM)</div>
+                    <div class="sch">Indus Valley Piublic School, Noida</div>
+                    <div class="yr">Completed | 89.8%</div>
+                </div>
+                <div class="rv ecard">
+                    <div class="deg">Class 10<sup>th</sup></div>
+                    <div class="sch">Indus Valley Public School, Noida</div>
+                    <div class="yr">Completed | 92.2%</div>
+                </div>
+            </div>
+            <div class="section-title">
+                <h4>Certifications</h4><br>
+            </div>
+            <ul class="cert-list">
+                <li class="rv"><strong>AWS Cloud Practitioner Certification</strong>Amazon &amp; GeeksforGeeks</li>
+                <li class="rv"><strong>Python Pandas Certification Course</strong>Kaggle</li>
+                <li class="rv"><strong>Career Essentials in Generative AI</strong>Microsoft &amp; LinkedIn</li>
+                <li class="rv"><strong>Full Stack Java Training</strong>Cetpa Infotech Pvt. Ltd., Noida</li>
+                <li class="rv"><strong>UI/UX Design Certificate</strong>Great Learning</li>
+                <li class="rv"><strong>NCC 'B' &amp; 'C' Certificate (Army Wing)</strong>Grade 'A' in both</li>
+            </ul>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="wrap contact">
+            <div class="sh rv" style="text-align:center;">
+                <div class="eyebrow" style="justify-content:center;">Get in touch</div>
+                <h2>Let's build something with data.</h2>
+            </div>
+            <p class="rv">I'm open to internships, entry-level roles, and collaborations in data science, analytics, and
+                web development. Feel free to reach out — I'd love to hear from you.</p>
+            <div class="clinks rv">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akash240204@gmail.com" class="btn btn-p"
+                    target="_blank">Email Me</a>
+                <a href="https://www.linkedin.com/in/akash-chaurasiya-486a8930b" class="btn btn-g"
+                    target="_blank">LinkedIn</a>
+                <a href="https://github.com/Akash240620" class="btn btn-g" target="_blank">GitHub</a>
+                <a href="###" class="btn btn-g">+91 9310179338</a>
+            </div>
+        </section>
+
+        <footer><span>&copy; 2026 Akash Chaurasiya</span> · Built with HTML, CSS &amp; a lot of Coffee ☕</footer>
+
+    </div><!-- /main-content -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
