@@ -3,28 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Akash Chaurasiya Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- CINEMATIC LETTERBOX -->
+
+    <!-- LETTERBOX -->
     <div id="lb-top"></div>
     <div id="lb-bottom"></div>
 
-    <!-- BIG BANG INTRO OVERLAY -->
+    <!-- BIG BANG -->
     <div id="bb-overlay">
         <canvas id="bb-canvas"></canvas>
         <div id="bb-flash"></div>
         <div id="bb-title">
-            <div class="big">Welcome to my PORTFOLIO</div>
+            <div class="big">Welcome to my Portfolio</div>
             <div class="sub">Data Science · AI/ML · Analytics</div>
         </div>
     </div>
@@ -32,10 +32,19 @@
     <!-- VIGNETTE -->
     <div id="vignette"></div>
 
+    <!-- MOBILE NAV DRAWER -->
+    <nav class="nav-drawer" id="nav-drawer">
+        <a href="#about" onclick="closeDrawer()">About</a>
+        <a href="#experience" onclick="closeDrawer()">Experience</a>
+        <a href="#projects" onclick="closeDrawer()">Projects</a>
+        <a href="#skills" onclick="closeDrawer()">Skills</a>
+        <a href="#education" onclick="closeDrawer()">Education</a>
+        <a href="#contact" onclick="closeDrawer()">Contact</a>
+    </nav>
+
     <!-- MAIN CONTENT -->
     <div id="main-content">
 
-        <!-- BG -->
         <canvas id="starfield"></canvas>
         <div class="planet p1"></div>
         <div class="planet p2"></div>
@@ -46,7 +55,7 @@
         <div class="orb o3"></div>
         <div class="ship">
             <div class="trail"></div>
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 64 64" fill="none">
                 <path d="M32 2 C40 16 46 30 46 42 C46 50 40 56 32 60 C24 56 18 50 18 42 C18 30 24 16 32 2 Z"
                     fill="#cdd6e4" />
                 <path d="M32 2 C40 16 46 30 46 42 C46 46 44 50 41 53 L32 30 Z" fill="#8b97ab" />
@@ -58,7 +67,7 @@
         </div>
         <div class="ship2">
             <div class="trail"></div>
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 64 64" fill="none">
                 <path d="M32 2 C40 16 46 30 46 42 C46 50 40 56 32 60 C24 56 18 50 18 42 C18 30 24 16 32 2 Z"
                     fill="#c084fc" />
                 <circle cx="32" cy="24" r="5" fill="#e9d5ff" />
@@ -78,7 +87,7 @@
             <div class="beam" style="left:78%;animation-duration:9.5s;animation-delay:0s;"></div>
         </div>
 
-        <!-- SVG SCROLL PATH -->
+        <!-- SVG PATH -->
         <div id="scroll-path-wrap">
             <svg id="scroll-path-svg" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -112,6 +121,9 @@
                     <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
         </header>
 
@@ -135,7 +147,6 @@
                     <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
                     <span class="ttitle">profile.py</span>
                 </div>
-
                 <div class="tbody">
                     <div><span class="c3">class</span> <span class="c1">DataScientist</span>:</div>
                     <div>&nbsp;&nbsp;<span class="c3">def</span> <span class="c1">__init__</span>(self):</div>
@@ -144,21 +155,19 @@
                     <div>&nbsp;&nbsp;&nbsp;&nbsp;self.education = <span class="c2">"MCA, JSSATE Noida"</span></div>
                     <div>&nbsp;&nbsp;&nbsp;&nbsp;self.tools = [<span class="c2">"Python"</span>, <span
                             class="c2">"SQL"</span>, <span class="c2">"Power BI"</span>, <span
-                            class="c2">"React"</span>,<span class="c2">"New technologies"</span>]</div>
+                            class="c2">"React"</span>]</div>
                     <br>
-                    <div>&nbsp;&nbsp;<span class="c3">def</span> <span class="c1">done</span>(self):</div>
+                    <div>&nbsp;&nbsp;<span class="c3">def</span> <span class="c1">currently_doing</span>(self):</div>
                     <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c3">return</span> <span class="c2">"Web Dev Intern @
                             Prodigy Infotech"</span></div>
                     <br>
-
                     <div class="typing-container">
                         <span class="out">&gt;&gt;&gt;&nbsp;</span><span id="type-line1" class="out"></span><span
                             id="cursor1" class="cursor"></span>
                     </div>
-
-                    <div class="typing-container" id="output-wrapper" style="display: none; margin-top: 4px;">
+                    <div class="typing-container" id="output-wrapper" style="display:none;margin-top:4px;">
                         <span id="type-line2" class="c2"></span><span id="cursor2" class="cursor"
-                            style="display: none;"></span>
+                            style="display:none;"></span>
                     </div>
                 </div>
             </div>
@@ -175,8 +184,7 @@
                 intersection of <strong>data analytics, machine learning, and web development</strong> — I enjoy taking
                 messy, real-world data and turning it into dashboards, models, and applications that people can actually
                 use. Alongside my data work, I have hands-on experience in <strong>Web Development</strong>, building
-                responsive and
-                user-friendly web applications using modern technologies.</p>
+                responsive and user-friendly web applications using modern technologies.</p>
             <div class="about-grid g3">
                 <div class="rv stat">
                     <div class="num">3+</div>
@@ -224,8 +232,7 @@
                     <div class="card-head">
                         <h3>Uber Ride Dashboard</h3><a
                             href="https://github.com/Akash240620/Uber_Data_Analysis_Dashboard" class="card-link"
-                            target="_blank">GitHub
-                            →</a>
+                            target="_blank">GitHub →</a>
                     </div>
                     <div class="stack">Python · Pandas · SQL · Power BI · DAX · Excel</div>
                     <ul>
@@ -320,7 +327,7 @@
                 <div class="rv ecard">
                     <div class="deg">Master of Computer Applications (MCA)</div>
                     <div class="sch">JSS Academy of Technical Education, Noida</div>
-                    <div class="yr">Pursuing | 2025 - 27</div>
+                    <div class="yr">Pursuing | 2025 – 27</div>
                 </div>
                 <div class="rv ecard">
                     <div class="deg">Bachelor of Computer Applications (BCA)</div>
@@ -328,8 +335,8 @@
                     <div class="yr">Completed | 8.3 CGPA</div>
                 </div>
                 <div class="rv ecard">
-                    <div class="deg">Class 12<sup>th</sup> SCIENCE (PCM)</div>
-                    <div class="sch">Indus Valley Piublic School, Noida</div>
+                    <div class="deg">Class 12<sup>th</sup> Science (PCM)</div>
+                    <div class="sch">Indus Valley Public School, Noida</div>
                     <div class="yr">Completed | 89.8%</div>
                 </div>
                 <div class="rv ecard">
@@ -360,12 +367,12 @@
             <p class="rv">I'm open to internships, entry-level roles, and collaborations in data science, analytics, and
                 web development. Feel free to reach out — I'd love to hear from you.</p>
             <div class="clinks rv">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akash240204@gmail.com" class="btn btn-p"
-                    target="_blank">Email Me</a>
+                <a href="mailto:akash240204@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Akash,%0A%0AI%20visited%20your%20portfolio..."
+                    class="btn btn-p" target="_blank">Email Me</a>
                 <a href="https://www.linkedin.com/in/akash-chaurasiya-486a8930b" class="btn btn-g"
                     target="_blank">LinkedIn</a>
                 <a href="https://github.com/Akash240620" class="btn btn-g" target="_blank">GitHub</a>
-                <a href="###" class="btn btn-g">+91 9310179338</a>
+                <a href="tel:+919310179338" class="btn btn-g">+91 9310179338</a>
             </div>
         </section>
 
@@ -373,8 +380,20 @@
 
     </div><!-- /main-content -->
 
+    <script>
+        // Hamburger
+        function closeDrawer() {
+            document.getElementById('nav-drawer').classList.remove('open');
+            document.getElementById('nav-toggle').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('nav-toggle').addEventListener('click', function () {
+            const open = this.classList.toggle('open');
+            document.getElementById('nav-drawer').classList.toggle('open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        });
+    </script>
     <script src="script.js"></script>
-
 </body>
 
 </html>
